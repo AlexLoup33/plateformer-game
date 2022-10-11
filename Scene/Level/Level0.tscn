@@ -1,0 +1,238 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://ressources/Ninja Frog Ress/Terrain/Terrain (16x16).png" type="Texture" id=1]
+[ext_resource path="res://Scene/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=13]
+0/name = "Terrain (16x16).png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 64, 48, 48 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Terrain (16x16).png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 192, 64, 64, 48 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 178, Vector2( 0, 1 ), 511, Vector2( 1, 0 ), 56, Vector2( 1, 1 ), 432, Vector2( 1, 2 ), 54, Vector2( 2, 0 ), 154, Vector2( 2, 1 ), 216, Vector2( 2, 2 ), 27, Vector2( 3, 0 ), 184, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 58 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 3, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Terrain (16x16).png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 80, 16, 16 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 0
+2/autotile/bitmask_flags = [  ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 16, 16 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Terrain (16x16).png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 192, 80, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 14 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+
+[node name="Level0" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 13 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -720882, 1, 0, -720881, 1, 1, -720880, 1, 1, -720879, 1, 1, -720878, 1, 1, -720877, 1, 1, -720876, 1, 1, -720875, 1, 1, -720874, 1, 1, -720873, 1, 1, -720872, 1, 1, -720871, 1, 1, -720870, 1, 1, -720869, 1, 1, -720868, 1, 0, -655346, 1, 65539, -655332, 1, 65539, -589810, 1, 65539, -589796, 1, 65539, -524274, 1, 65539, -524260, 1, 65539, -458750, 1, 0, -458749, 1, 1, -458748, 1, 1, -458747, 1, 1, -458746, 1, 1, -458745, 1, 1, -458744, 1, 1, -458743, 1, 1, -458742, 1, 1, -458741, 1, 1, -458740, 1, 1, -458739, 1, 1, -458738, 1, 2, -458724, 1, 65539, -393214, 1, 65539, -393202, 1, 65539, -393188, 1, 65539, -327678, 1, 65539, -327666, 1, 65539, -327652, 1, 65539, -262142, 1, 65539, -262130, 1, 65539, -262124, 0, 0, -262116, 1, 65539, -196606, 1, 65539, -196594, 1, 65539, -196580, 1, 65539, -65548, 1, 0, -65547, 1, 1, -65546, 1, 1, -65545, 1, 1, -65544, 1, 1, -65543, 1, 1, -65542, 1, 1, -65541, 1, 1, -65540, 1, 1, -65539, 1, 1, -65538, 1, 1, -65537, 1, 1, -131072, 1, 1, -131071, 1, 1, -131070, 1, 2, -131058, 1, 65539, -131044, 1, 65539, -12, 1, 65539, -65534, 1, 65539, -65522, 1, 65539, -65516, 0, 0, -65508, 1, 65539, 65524, 1, 65539, 2, 1, 0, 14, 1, 0, 28, 1, 0, 131060, 1, 65539, 196596, 1, 65539, 131079, 0, 0, 131092, 0, 0, 262132, 1, 65539, 327668, 1, 65539, 393204, 1, 0, 393205, 1, 1, 393206, 1, 1, 393207, 1, 1, 393208, 1, 1, 393209, 1, 1, 393210, 1, 1, 393211, 1, 1, 393212, 1, 1, 393213, 1, 1, 393214, 1, 1, 393215, 1, 1, 327680, 1, 1, 327681, 1, 1, 327682, 1, 1, 327683, 1, 1, 327684, 1, 1, 327685, 1, 1, 327686, 1, 1, 327687, 1, 1, 327688, 1, 1, 327689, 1, 1, 327690, 1, 1, 327691, 1, 1, 327692, 1, 1, 327693, 1, 1, 327694, 1, 1, 327695, 1, 1, 327696, 1, 1, 327697, 1, 1, 327698, 1, 1, 327699, 1, 1, 327700, 1, 1, 327701, 1, 1, 327702, 1, 1, 327703, 1, 1, 327704, 1, 1, 327705, 1, 1, 327706, 1, 1, 327707, 1, 1, 327708, 1, 0 )
+
+[node name="Jump_text" type="Label" parent="."]
+margin_left = 67.0
+margin_top = -7.0
+margin_right = 211.0
+margin_bottom = 24.0
+text = "Press 'space' for jump."
+
+[node name="Jump_text2" type="Label" parent="."]
+margin_left = 273.0
+margin_top = -113.0
+margin_right = 417.0
+margin_bottom = -82.0
+text = "You can jump twice"
+
+[node name="Move_text" type="Label" parent="."]
+margin_left = -155.0
+margin_top = -6.0
+margin_right = -15.0
+margin_bottom = 25.0
+text = "Use Q and D for going
+on left and right"
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 444, 52 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -110, 58 )

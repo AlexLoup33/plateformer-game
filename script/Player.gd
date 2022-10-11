@@ -1,22 +1,35 @@
 extends KinematicBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
+export (int) var speed = 500
+export (int) var jump_speed = -1000
 export (int) var gravity = 4000
+export var max_jump = 2
+var jump_count = 0
 
-export (float, 0, 1.0) var friction = 0.1
+export (float, 0, 1.0) var friction = 0.15
 export (float, 0, 1.0) var acceleration = 0.25
 
+export (bool) var key = true
+
 var velocity = Vector2.ZERO
+onready var AnimatedSprite = $AnimatedSprite
 
 enum STATE{
-	IDLE, 
-	RUN,
-	JUMP
+	Idle, 
+	Run,
+	Jump,
 }
 
+var dict = {
+	0 : "Idle",
+	1 : "Run",
+	2 : "Jump"
+}
+
+var state;
+
 func _ready():
-	pass
+	state = STATE.Idle
 
 func get_input():
 	var dir = 0
@@ -28,11 +41,34 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+	flipcheck(dir)
+	_update_state(dir)
 
 func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	if is_on_floor():
+		jump_count = 0
+	
 	if Input.is_action_just_pressed("Jump"):
-		if is_on_floor():
+		if is_on_floor() or jump_count < max_jump:
 			velocity.y = jump_speed
+			jump_count += 1
+	AnimatedSprite.play(dict[state])
+	
+
+func flipcheck(dir):
+	if dir == -1:
+		AnimatedSprite.flip_h =  true
+	elif dir == 1:
+		AnimatedSprite.flip_h = false
+
+func _update_state(dir):
+	if dir == 0 :
+		state = STATE.Idle
+	else : 
+		state = STATE.Run
+	if not is_on_floor():
+		state = STATE.Jump
