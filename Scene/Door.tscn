@@ -39,11 +39,6 @@ region = Rect2( 184, 0, 46, 56 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": false,
 "name": "Closing",
@@ -53,13 +48,18 @@ animations = [ {
 "loop": false,
 "name": "Opening",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 23, 28 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 17, 25 )
+extents = Vector2( 17, 24.5 )
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -76,7 +76,7 @@ shape = SubResource( 10 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 2.5 )
 shape = SubResource( 11 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

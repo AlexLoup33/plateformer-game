@@ -4,6 +4,7 @@ export (int) var speed = 500
 export (int) var jump_speed = -1000
 export (int) var gravity = 4000
 export var max_jump = 2
+var life = 3
 var jump_count = 0
 
 export (float, 0, 1.0) var friction = 0.15
@@ -18,12 +19,14 @@ enum STATE{
 	Idle, 
 	Run,
 	Jump,
+	DJump,
 }
 
 var dict = {
 	0 : "Idle",
 	1 : "Run",
-	2 : "Jump"
+	2 : "Jump",
+	3 : "DJump"
 }
 
 var state;
@@ -41,8 +44,7 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
-	flipcheck(dir)
-	_update_state(dir)
+	_update_animation(dir)
 
 func _physics_process(delta):
 	get_input()
@@ -56,8 +58,6 @@ func _physics_process(delta):
 		if is_on_floor() or jump_count < max_jump:
 			velocity.y = jump_speed
 			jump_count += 1
-	AnimatedSprite.play(dict[state])
-	
 
 func flipcheck(dir):
 	if dir == -1:
@@ -70,5 +70,12 @@ func _update_state(dir):
 		state = STATE.Idle
 	else : 
 		state = STATE.Run
-	if not is_on_floor():
+	if not is_on_floor() or $AnimatedSprite.animation
 		state = STATE.Jump
+		if jump_count == 1:
+			state = STATE.DJump
+
+func _update_animation(dir):
+	flipcheck(dir)
+	_update_state(dir)
+	AnimatedSprite.play(dict[state])

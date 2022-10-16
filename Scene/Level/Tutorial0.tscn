@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ressources/Ninja Frog Ress/Terrain/Terrain (16x16).png" type="Texture" id=3]
+[ext_resource path="res://script/Tutorial0.gd" type="Script" id=4]
+[ext_resource path="res://Scene/Spike.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
@@ -200,39 +202,230 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 3/z_index = 0
 
-[node name="Level0" type="Node2D"]
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=16]
+0/name = "Terrain (16x16).png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 192, 80, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 15 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Terrain (16x16).png 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 272, 16, 16, 16 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="Tutorial0" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 13 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -720882, 1, 0, -720881, 1, 1, -720880, 1, 1, -720879, 1, 1, -720878, 1, 1, -720877, 1, 1, -720876, 1, 1, -720875, 1, 1, -720874, 1, 1, -720873, 1, 1, -720872, 1, 1, -720871, 1, 1, -720870, 1, 1, -720869, 1, 1, -720868, 1, 0, -655346, 1, 65539, -655332, 1, 65539, -589810, 1, 65539, -589796, 1, 65539, -524274, 1, 65539, -524260, 1, 65539, -458750, 1, 0, -458749, 1, 1, -458748, 1, 1, -458747, 1, 1, -458746, 1, 1, -458745, 1, 1, -458744, 1, 1, -458743, 1, 1, -458742, 1, 1, -458741, 1, 1, -458740, 1, 1, -458739, 1, 1, -458738, 1, 2, -458724, 1, 65539, -393214, 1, 65539, -393202, 1, 65539, -393188, 1, 65539, -327678, 1, 65539, -327666, 1, 65539, -327652, 1, 65539, -262142, 1, 65539, -262130, 1, 65539, -262124, 0, 0, -262116, 1, 65539, -196606, 1, 65539, -196594, 1, 65539, -196580, 1, 65539, -65548, 1, 0, -65547, 1, 1, -65546, 1, 1, -65545, 1, 1, -65544, 1, 1, -65543, 1, 1, -65542, 1, 1, -65541, 1, 1, -65540, 1, 1, -65539, 1, 1, -65538, 1, 1, -65537, 1, 1, -131072, 1, 1, -131071, 1, 1, -131070, 1, 2, -131058, 1, 65539, -131044, 1, 65539, -12, 1, 65539, -65534, 1, 65539, -65522, 1, 65539, -65516, 0, 0, -65508, 1, 65539, 65524, 1, 65539, 2, 1, 0, 14, 1, 0, 28, 1, 0, 131060, 1, 65539, 196596, 1, 65539, 131079, 0, 0, 131092, 0, 0, 262132, 1, 65539, 327668, 1, 65539, 393204, 1, 0, 393205, 1, 1, 393206, 1, 1, 393207, 1, 1, 393208, 1, 1, 393209, 1, 1, 393210, 1, 1, 393211, 1, 1, 393212, 1, 1, 393213, 1, 1, 393214, 1, 1, 393215, 1, 1, 327680, 1, 1, 327681, 1, 1, 327682, 1, 1, 327683, 1, 1, 327684, 1, 1, 327685, 1, 1, 327686, 1, 1, 327687, 1, 1, 327688, 1, 1, 327689, 1, 1, 327690, 1, 1, 327691, 1, 1, 327692, 1, 1, 327693, 1, 1, 327694, 1, 1, 327695, 1, 1, 327696, 1, 1, 327697, 1, 1, 327698, 1, 1, 327699, 1, 1, 327700, 1, 1, 327701, 1, 1, 327702, 1, 1, 327703, 1, 1, 327704, 1, 1, 327705, 1, 1, 327706, 1, 1, 327707, 1, 1, 327708, 1, 0 )
+tile_data = PoolIntArray( -393201, 1, 0, -393200, 1, 1, -393199, 1, 1, -393198, 1, 1, -393197, 1, 1, -393196, 1, 1, -393195, 1, 1, -393194, 1, 1, -393193, 1, 1, -393192, 1, 1, -393191, 1, 1, -393190, 1, 1, -393189, 1, 0, -327665, 1, 65539, -327653, 1, 65539, -262131, 1, 0, -262130, 1, 1, -262129, 1, 0, -262117, 1, 0, -262116, 1, 1, -262115, 1, 0, -196595, 1, 65539, -196579, 1, 65539, -65549, 1, 0, -65548, 1, 1, -65547, 1, 1, -65546, 1, 1, -65545, 1, 1, -65544, 1, 1, -65543, 1, 1, -65542, 1, 1, -65541, 1, 1, -65540, 1, 1, -65539, 1, 1, -65538, 1, 1, -65537, 1, 1, -131072, 1, 1, -131071, 1, 1, -131070, 1, 1, -131069, 1, 1, -131068, 1, 1, -131067, 1, 1, -131066, 1, 1, -131065, 1, 1, -131064, 1, 1, -131063, 1, 1, -131062, 1, 1, -131061, 1, 1, -131060, 1, 1, -131059, 1, 0, -131043, 1, 0, -131042, 1, 1, -131041, 1, 1, -131040, 1, 1, -131039, 1, 1, -131038, 1, 1, -131037, 1, 1, -131036, 1, 1, -131035, 1, 1, -131034, 1, 1, -131033, 1, 0, -13, 1, 65539, -65497, 1, 65539, 65523, 1, 65539, 39, 1, 65539, 131059, 1, 65539, 65575, 1, 65539, 196595, 1, 65539, 131092, 0, 0, 131111, 1, 65539, 262131, 1, 65539, 196647, 1, 65539, 327667, 1, 65539, 262183, 1, 65539, 393203, 1, 0, 393204, 1, 1, 393205, 1, 1, 393206, 1, 1, 393207, 1, 1, 393208, 1, 1, 393209, 1, 1, 393210, 1, 1, 393211, 1, 1, 393212, 1, 1, 393213, 1, 1, 393214, 1, 1, 393215, 1, 1, 327680, 1, 1, 327681, 1, 1, 327682, 1, 1, 327683, 1, 1, 327684, 1, 1, 327685, 1, 1, 327686, 1, 1, 327687, 1, 1, 327688, 1, 1, 327689, 1, 1, 327690, 1, 1, 327691, 1, 1, 327692, 1, 1, 327693, 1, 1, 327694, 1, 1, 327695, 1, 1, 327696, 1, 1, 327697, 1, 1, 327698, 1, 1, 327699, 1, 1, 327700, 1, 1, 327701, 1, 1, 327702, 1, 1, 327703, 1, 1, 327704, 1, 1, 327705, 1, 1, 327706, 1, 1, 327707, 1, 1, 327708, 1, 1, 327709, 1, 1, 327710, 1, 1, 327711, 1, 1, 327712, 1, 0, 327719, 1, 65539, 458739, 1, 65539, 393255, 1, 65539, 524275, 1, 65539, 458791, 1, 65539, 589811, 1, 65539, 524327, 1, 65539, 655347, 1, 65539, 589863, 1, 65539, 720883, 1, 65539, 655363, 0, 0, 655385, 0, 0, 655388, 0, 0, 655399, 1, 65539, 786419, 1, 65539, 720935, 1, 65539, 851955, 1, 65539, 786471, 1, 65539, 917491, 1, 65539, 851971, 0, 0, 851993, 0, 0, 851996, 0, 0, 852007, 1, 65539, 983027, 1, 65539, 917543, 1, 65539, 1048563, 1, 65539, 983079, 1, 65539, 1114099, 1, 65539, 1048579, 0, 0, 1048595, 1, 0, 1048596, 1, 1, 1048597, 1, 1, 1048598, 1, 1, 1048599, 1, 1, 1048600, 1, 1, 1048601, 1, 1, 1048602, 1, 1, 1048603, 1, 1, 1048604, 1, 1, 1048605, 1, 1, 1048606, 1, 1, 1048607, 1, 1, 1048608, 1, 1, 1048609, 1, 1, 1048610, 1, 1, 1048611, 1, 1, 1048612, 1, 1, 1048613, 1, 1, 1048614, 1, 1, 1048615, 1, 0, 1179635, 1, 65539, 1114131, 1, 65539, 1245171, 1, 65539, 1179667, 1, 65539, 1310707, 1, 65539, 1245187, 0, 0, 1245203, 1, 65539, 1376243, 1, 65539, 1310739, 1, 65539, 1441779, 1, 65539, 1376275, 1, 65539, 1507315, 1, 0, 1507316, 1, 1, 1507317, 1, 1, 1507318, 1, 1, 1507319, 1, 1, 1507320, 1, 1, 1507321, 1, 1, 1507322, 1, 1, 1507323, 1, 1, 1507324, 1, 1, 1507325, 1, 1, 1507326, 1, 1, 1507327, 1, 1, 1441792, 1, 1, 1441793, 1, 1, 1441794, 1, 1, 1441795, 1, 1, 1441796, 1, 1, 1441797, 1, 1, 1441798, 1, 1, 1441799, 1, 1, 1441800, 1, 1, 1441801, 1, 1, 1441802, 1, 1, 1441803, 1, 1, 1441804, 1, 1, 1441805, 1, 1, 1441806, 1, 1, 1441807, 1, 1, 1441808, 1, 1, 1441809, 1, 1, 1441810, 1, 1, 1441811, 1, 0 )
 
-[node name="Jump_text" type="Label" parent="."]
-margin_left = 67.0
-margin_top = -7.0
-margin_right = 211.0
-margin_bottom = 24.0
-text = "Press 'space' for jump."
-
-[node name="Jump_text2" type="Label" parent="."]
-margin_left = 273.0
-margin_top = -113.0
-margin_right = 417.0
-margin_bottom = -82.0
-text = "You can jump twice"
-
-[node name="Move_text" type="Label" parent="."]
-margin_left = -155.0
-margin_top = -6.0
-margin_right = -15.0
-margin_bottom = 25.0
-text = "Use Q and D for going
-on left and right"
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource( 16 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -262131, 0, 0, -262115, 0, 0, -65549, 0, 0, -131059, 0, 0, -131043, 0, 0, -131033, 0, 0, 393203, 0, 0, 327712, 0, 0, 1048595, 0, 0, 1048615, 0, 0, 1507315, 0, 0, 1441811, 0, 0 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 444, 51 )
+position = Vector2( -169, 324 )
+
+[node name="Panel_move" type="Panel" parent="."]
+margin_left = -177.0
+margin_top = -1.0
+margin_right = -23.0
+margin_bottom = 39.0
+
+[node name="Move_text" type="Label" parent="Panel_move"]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 154.0
+margin_bottom = 39.0
+text = "Use Q and D for going
+on left and right"
+align = 1
+valign = 1
+
+[node name="Panel_jump" type="Panel" parent="."]
+margin_left = 268.0
+margin_top = -40.0
+margin_right = 414.0
+margin_bottom = -14.0
+
+[node name="Jump_text" type="Label" parent="Panel_jump"]
+margin_top = 1.0
+margin_right = 146.0
+margin_bottom = 26.0
+text = "Press 'space' for jump"
+align = 1
+valign = 1
+
+[node name="Panel_trap" type="Panel" parent="."]
+margin_left = 371.0
+margin_top = 111.0
+margin_right = 529.0
+margin_bottom = 145.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Trap_text" type="Label" parent="Panel_trap"]
+margin_top = 1.0
+margin_right = 158.0
+margin_bottom = 33.0
+text = "don't walk on spike or other traps"
+align = 1
+autowrap = true
+
+[node name="Panel_doubleJ" type="Panel" parent="."]
+margin_left = 117.0
+margin_top = 137.0
+margin_right = 277.0
+margin_bottom = 186.0
+
+[node name="Jump_text2" type="Label" parent="Panel_doubleJ"]
+margin_top = 1.0
+margin_right = 160.0
+margin_bottom = 49.0
+text = "You can jump twice"
+align = 1
+valign = 1
+
+[node name="Panel_WinC" type="Panel" parent="."]
+margin_left = -160.0
+margin_top = 112.0
+margin_right = 24.0
+margin_bottom = 160.0
+
+[node name="Label_WinC" type="Label" parent="Panel_WinC"]
+margin_right = 184.0
+margin_bottom = 48.0
+text = "Take the key and go through the door for finishing the level"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -164, 64 )
+position = Vector2( -170, 64 )
+speed = null
+jump_speed = null
+gravity = null
+max_jump = null
+friction = null
+acceleration = null
+key = null
+
+[node name="AnimatedSprite" parent="Player" index="0"]
+frame = 5
+
+[node name="SpikeContainer" type="Node2D" parent="."]
+
+[node name="Spike" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 392, 248 )
+
+[node name="Spike2" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 376, 248 )
+
+[node name="Spike3" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 360, 248 )
+
+[node name="SpikeContainer2" type="Node2D" parent="."]
+position = Vector2( -159, 96 )
+
+[node name="Spike" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 391, 248 )
+
+[node name="Spike2" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 375, 248 )
+
+[node name="Spike3" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 359, 248 )
+
+[node name="Spike8" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 343, 248 )
+
+[node name="Spike9" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 327, 248 )
+
+[node name="Spike10" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 311, 248 )
+
+[node name="Spike11" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 295, 248 )
+
+[node name="Spike12" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 279, 248 )
+
+[node name="Spike13" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 263, 248 )
+
+[node name="Spike4" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 439, 248 )
+
+[node name="Spike5" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 423, 248 )
+
+[node name="Spike6" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 407, 248 )
+
+[node name="Spike7" parent="SpikeContainer2" instance=ExtResource( 5 )]
+position = Vector2( 455, 248 )
+
+[connection signal="hit" from="SpikeContainer/Spike" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike2" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike3" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike2" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike3" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike8" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike9" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike10" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike11" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike12" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike13" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike4" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike5" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike6" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer2/Spike7" to="." method="_on_Spike_hit"]
+
+[editable path="Player"]
