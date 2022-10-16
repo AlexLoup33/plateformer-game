@@ -347,16 +347,6 @@ autowrap = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -170, 64 )
-speed = null
-jump_speed = null
-gravity = null
-max_jump = null
-friction = null
-acceleration = null
-key = null
-
-[node name="AnimatedSprite" parent="Player" index="0"]
-frame = 5
 
 [node name="SpikeContainer" type="Node2D" parent="."]
 

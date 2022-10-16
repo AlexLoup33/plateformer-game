@@ -70,9 +70,9 @@ func _update_state(dir):
 		state = STATE.Idle
 	else : 
 		state = STATE.Run
-	if not is_on_floor() or $AnimatedSprite.animation
+	if not is_on_floor():
 		state = STATE.Jump
-		if jump_count == 1:
+		if jump_count == 2:
 			state = STATE.DJump
 
 func _update_animation(dir):
