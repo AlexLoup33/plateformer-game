@@ -1,10 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ressources/Ninja Frog Ress/Terrain/Terrain (16x16).png" type="Texture" id=3]
 [ext_resource path="res://script/Tutorial0.gd" type="Script" id=4]
 [ext_resource path="res://Scene/Spike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scene/Lever.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
@@ -254,6 +257,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [node name="Tutorial0" type="Node2D"]
 script = ExtResource( 4 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 17 )
+margin_left = -4999.0
+margin_top = -2689.0
+margin_right = 4258.0
+margin_bottom = 2475.0
+color = Color( 0.0117647, 0.188235, 0.203922, 1 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 13 )
 cell_size = Vector2( 16, 16 )
@@ -266,9 +277,6 @@ tile_set = SubResource( 16 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -262131, 0, 0, -262115, 0, 0, -65549, 0, 0, -131059, 0, 0, -131043, 0, 0, -131033, 0, 0, 393203, 0, 0, 327712, 0, 0, 1048595, 0, 0, 1048615, 0, 0, 1507315, 0, 0, 1441811, 0, 0 )
-
-[node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( -169, 324 )
 
 [node name="Panel_move" type="Panel" parent="."]
 margin_left = -177.0
@@ -345,77 +353,94 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( -169, 324 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -170, 64 )
 
+[node name="Timer" parent="Player" index="3"]
+wait_time = 1.0
+one_shot = true
+
 [node name="SpikeContainer" type="Node2D" parent="."]
 
-[node name="Spike" parent="SpikeContainer" instance=ExtResource( 5 )]
-position = Vector2( 392, 248 )
+[node name="Spike7" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 296, 344 )
 
-[node name="Spike2" parent="SpikeContainer" instance=ExtResource( 5 )]
-position = Vector2( 376, 248 )
+[node name="Spike21" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 393, 248 )
 
-[node name="Spike3" parent="SpikeContainer" instance=ExtResource( 5 )]
-position = Vector2( 360, 248 )
+[node name="Spike22" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 378, 248 )
 
-[node name="SpikeContainer2" type="Node2D" parent="."]
-position = Vector2( -159, 96 )
+[node name="Spike23" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 363, 248 )
 
-[node name="Spike" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 391, 248 )
+[node name="Spike8" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 280, 344 )
 
-[node name="Spike2" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 375, 248 )
+[node name="Spike9" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 264, 344 )
 
-[node name="Spike3" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 359, 248 )
+[node name="Spike10" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 248, 344 )
 
-[node name="Spike8" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 343, 248 )
+[node name="Spike11" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 232, 344 )
 
-[node name="Spike9" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 327, 248 )
+[node name="Spike12" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 216, 344 )
 
-[node name="Spike10" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 311, 248 )
+[node name="Spike13" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 200, 344 )
 
-[node name="Spike11" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 295, 248 )
+[node name="Spike14" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 184, 344 )
 
-[node name="Spike12" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 279, 248 )
+[node name="Spike15" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 168, 344 )
 
-[node name="Spike13" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 263, 248 )
+[node name="Spike16" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 152, 344 )
 
-[node name="Spike4" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 439, 248 )
+[node name="Spike17" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 136, 344 )
 
-[node name="Spike5" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 423, 248 )
+[node name="Spike18" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 120, 344 )
 
-[node name="Spike6" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 407, 248 )
+[node name="Spike19" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 344 )
 
-[node name="Spike7" parent="SpikeContainer2" instance=ExtResource( 5 )]
-position = Vector2( 455, 248 )
+[node name="Spike20" parent="SpikeContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 344 )
 
-[connection signal="hit" from="SpikeContainer/Spike" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer/Spike2" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer/Spike3" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike2" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike3" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike8" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike9" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike10" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike11" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike12" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike13" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike4" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike5" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike6" to="." method="_on_Spike_hit"]
-[connection signal="hit" from="SpikeContainer2/Spike7" to="." method="_on_Spike_hit"]
+[node name="Lever" parent="." instance=ExtResource( 6 )]
+position = Vector2( 27, 333 )
+scale = Vector2( 7, 7 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 218, 127 )
+current = true
+zoom = Vector2( 0.83, 0.8 )
+
+[connection signal="hit" from="SpikeContainer/Spike7" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike21" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike22" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike23" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike8" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike9" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike10" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike11" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike12" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike13" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike14" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike15" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike16" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike17" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike18" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike19" to="." method="_on_Spike_hit"]
+[connection signal="hit" from="SpikeContainer/Spike20" to="." method="_on_Spike_hit"]
 
 [editable path="Player"]

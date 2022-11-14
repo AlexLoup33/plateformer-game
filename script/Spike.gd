@@ -1,6 +1,6 @@
 extends Node2D
 
-signal hit
+signal hit;
 
 func _ready():
 	pass

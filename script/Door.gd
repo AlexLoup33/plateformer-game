@@ -6,20 +6,32 @@ var Player = preload("res://Scene/Player.tscn")
 
 enum STATE{
 	Close, 
-	Idle,
 	Open,
 }
 
 var dict = {
 	0 : "Close",
-	1 : "Idle",
-	2 : "Open"
+	1 : "Open"
 }
 
+var state;
+
 func _ready():
-	CollisionShape.disabled = true
+	CollisionShape.disabled = false
+	state = STATE.Close
 
+func opening():
+	state = STATE.Open
+	$CollisionShape2D.queue_free()
 
+func _update_animation():
+	$AnimatedSprite.play(dict[state])
 
-func _on_Area2D_body_entered(body):
-	get_tree().change_scene("res://Scene/Level/Level" + str(int(get_tree().current_scene.name)+1) + ".tscn")
+func interaction():
+	if state == STATE.Open:
+		get_tree().change_scene("res://Scene/Level/Level" + str(int(get_tree().current_scene.name)+1) + ".tscn")
+	else :
+		pass
+
+func _process(delta):
+	_update_animation()

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 500
+export (int) var speed = 300
 export (int) var jump_speed = -1000
 export (int) var gravity = 4000
 export var max_jump = 2
@@ -15,18 +15,22 @@ export (bool) var key = true
 var velocity = Vector2.ZERO
 onready var AnimatedSprite = $AnimatedSprite
 
+signal hit;
+
 enum STATE{
 	Idle, 
 	Run,
 	Jump,
 	DJump,
+	Hit,
 }
 
 var dict = {
 	0 : "Idle",
 	1 : "Run",
 	2 : "Jump",
-	3 : "DJump"
+	3 : "DJump",
+	4 : "Hit"
 }
 
 var state;
@@ -51,6 +55,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+	if Input.is_action_pressed("interaction"):
+		_update_interaction()
+	
 	if is_on_floor():
 		jump_count = 0
 	
@@ -62,16 +69,18 @@ func _physics_process(delta):
 func flipcheck(dir):
 	if dir == -1:
 		AnimatedSprite.flip_h =  true
+		$Area2D/CollisionShape2D.position.x = -16
 	elif dir == 1:
 		AnimatedSprite.flip_h = false
+		$Area2D/CollisionShape2D.position.x = 16
 
 func _update_state(dir):
 	if dir == 0 :
-		state = STATE.Idle
+			state = STATE.Idle
 	else : 
 		state = STATE.Run
-	if not is_on_floor():
-		state = STATE.Jump
+		if not is_on_floor():
+			state = STATE.Jump
 		if jump_count == 2:
 			state = STATE.DJump
 
@@ -79,3 +88,18 @@ func _update_animation(dir):
 	flipcheck(dir)
 	_update_state(dir)
 	AnimatedSprite.play(dict[state])
+
+func _update_interaction():
+	var bodies_array = $Area2D.get_overlapping_bodies()
+	for body in bodies_array:
+		if body.has_method("interaction"):
+			body.interaction()
+
+func hit():
+	if not $Timer.is_stopped():
+		pass
+	else :
+		$Timer.start()
+		print("hit")
+		state = STATE.Hit
+		life -= 1

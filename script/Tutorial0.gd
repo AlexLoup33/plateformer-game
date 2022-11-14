@@ -11,8 +11,10 @@ func _process(delta):
 
 
 func _on_Spike_hit():
-	_restart()
-	pass
+	$Player.hit()
+	if $Player.life == 0:
+		_restart()
 
 func _restart():
 	Player.global_position=positionPlayer
+	Player.life = 3
